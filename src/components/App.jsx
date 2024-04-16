@@ -1,16 +1,17 @@
-export const App = () => {
+import React, { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './Layout/Layout';
+
+const HomePage = lazy(() => import('../HomePage/HomePage'));
+
+const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      React
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+      </Route>
+    </Routes>
   );
 };
+
+export default App;

@@ -1,10 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { App } from 'components/App';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './components/App';
+import GlobalStyles from './assets/styles/GlobalStyles';
 import './index.css';
+import 'modern-normalize';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter basename="/foodsta">
+      <GlobalStyles />
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
