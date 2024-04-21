@@ -5,8 +5,9 @@ import Left from '../img/icon/Left';
 import Table_one from '../img/Table_one.png';
 import Table_two from '../img/Table_two.png';
 import Table_3 from '../img/Table_3.png';
-import Rectangle from '../img/Rectangle.png';
+import RectangleComponent from '../Rectangle/Rectangle';
 import Circle from '../Circle/Circle';
+import FoodList from 'components/Foodlist/FoodList';
 
 const Main = () => {
   const [currentImage, setCurrentImage] = useState(Table_one);
@@ -47,9 +48,8 @@ const Main = () => {
           </div>
         </Circle>
       </div>
-      <div>
-        <img src={Rectangle} alt="" />
-      </div>
+      <RectangleComponent />
+      <FoodList />
     </div>
   );
 };

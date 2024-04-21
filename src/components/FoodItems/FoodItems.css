@@ -1,0 +1,59 @@
+.wrapper {
+  display: grid; /* Используем сетку для расположения элементов */
+  grid-template-columns: repeat(3, 1fr); /* Три колонки равной ширины */
+  gap: 20px; /* Промежуток между элементами */
+}
+
+.catalog-food {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container {
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  padding: 0 0 20px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.food-photo {
+  width: 100%;
+  height: auto;
+}
+.description {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 15px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #2c2c2c;
+}
+.food_items-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #2c2c2c;
+  margin: 15px;
+}
+
+.title-price {
+  margin-left: 10px;
+}
+.food-photo {
+  margin-top: 15px;
+}

@@ -20,12 +20,16 @@ body {
     line-height: 1.5;
     letter-spacing: -0.005em;
     color: var(--color-text);
-    background-color: var(--color-background);
-    
+    background-color: #f5f5f5;
+    padding-left: 15px;
+
 }
 #root {
   margin: 0 auto;
-  width: 1280px; 
+  width: 1280px;
+  padding-left: 15px;
+  padding-right: 15px; 
+
 }
 
 h1,

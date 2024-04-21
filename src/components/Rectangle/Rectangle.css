@@ -1,0 +1,93 @@
+.rectangle {
+  position: relative;
+}
+
+.circle-rectangle {
+  position: absolute;
+  top: 60%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+}
+
+.apple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -56%);
+}
+.text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 50%;
+}
+.rectangle-title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 120%;
+  color: var(--black);
+  padding-top: 120px;
+  padding-bottom: 20px;
+}
+.rectangle-sub {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--black);
+}
+.rectangle-block {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  gap: 45px;
+}
+.rectangle-fast-title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 140%;
+  color: var(--black);
+  margin-top: 10px;
+}
+
+.rectangle-fast-sub {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--black);
+}
+.rectangle-circle {
+  border-radius: 50%;
+  border: 1px solid #f5f5f5;
+  background-color: #f5f5f5;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  display: grid;
+  justify-content: center;
+}
+.rectangle-btn {
+  border: 2px solid var(--dark-green);
+  border-radius: 30px;
+  padding: 10px 20px;
+  width: 106px;
+  height: 40px;
+  background: #fff;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 150%;
+  color: var(--black);
+  margin-top: 30px;
+}
+
+.rectangle-btn:hover {
+  border: 2px solid var(--button-green);
+  background: var(--button-green);
+}
