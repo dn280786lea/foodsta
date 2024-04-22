@@ -35,6 +35,10 @@
   top: 100%;
   transform: translateY(-50%);
 }
+.bt-left:hover,
+.bt-right:hover {
+  stroke: var(--dark-green);
+}
 
 .bt-left {
   left: 0;
@@ -74,6 +78,10 @@
   text-align: center;
   color: #2c2c2c;
   box-shadow: none;
+}
+
+.bt-menu-title:hover {
+  background: var(--yellow-main);
 }
 .table {
   position: absolute;

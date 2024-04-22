@@ -1,0 +1,12 @@
+.star-rating {
+  display: flex;
+  gap: 5px;
+}
+.star {
+  margin-right: 5px;
+}
+
+.star:hover,
+.star-rating:hover {
+  stroke: rgb(249, 212, 6);
+}

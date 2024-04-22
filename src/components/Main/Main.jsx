@@ -8,6 +8,7 @@ import Table_3 from '../img/Table_3.png';
 import RectangleComponent from '../Rectangle/Rectangle';
 import Circle from '../Circle/Circle';
 import FoodList from 'components/Foodlist/FoodList';
+import Reviews from '../Reviews/Reviews';
 
 const Main = () => {
   const [currentImage, setCurrentImage] = useState(Table_one);
@@ -50,6 +51,7 @@ const Main = () => {
       </div>
       <RectangleComponent />
       <FoodList />
+      <Reviews />
     </div>
   );
 };
