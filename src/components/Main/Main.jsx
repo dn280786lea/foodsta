@@ -5,20 +5,26 @@ import Left from '../img/icon/Left';
 import Table_one from '../img/Table_one.png';
 import Table_two from '../img/Table_two.png';
 import Table_3 from '../img/Table_3.png';
-import RectangleComponent from '../Rectangle/Rectangle';
 import Circle from '../Circle/Circle';
-import FoodList from 'components/Foodlist/FoodList';
-import Reviews from '../Reviews/Reviews';
-import Subscribe from '../Subscribe/Subscribe';
+import ShowModal from 'components/Form/ShowModal.jsx';
 
 const Main = () => {
   const [currentImage, setCurrentImage] = useState(Table_one);
+  const [showModal, setShowModal] = useState(false);
 
   const handleClick = () => {
     const images = [Table_one, Table_two, Table_3];
     const currentIndex = images.indexOf(currentImage);
     const nextIndex = (currentIndex + 1) % images.length;
     setCurrentImage(images[nextIndex]);
+  };
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -32,9 +38,9 @@ const Main = () => {
             enjoy a hassle-free and delicious meal from the comfort of your own
             home.
           </p>
-          <button className="bt-menu-title" to="/">
+          <button onClick={openModal} className="bt-menu-title">
             Order Now
-          </button>
+          </button>{' '}
         </div>
         <Circle>
           <div className="circle">
@@ -50,10 +56,8 @@ const Main = () => {
           </div>
         </Circle>
       </div>
-      <RectangleComponent />
-      <FoodList />
-      <Reviews />
-      <Subscribe />
+
+      {showModal && <ShowModal closeModal={closeModal} />}
     </div>
   );
 };

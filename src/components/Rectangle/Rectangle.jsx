@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Rectangle.css';
 import rectangleImage from '../img/rectangleImage.png';
 import apple from '../img/aple.png';
 import Circle from '../Circle/Circle';
 import Fast from 'components/img/icon/Fast';
 import Easy from 'components/img/icon/Easy';
+import ShowModal from '../Form/ShowModal.jsx';
 
 const RectangleComponent = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
   return (
     <div className="rectangle">
       <img src={rectangleImage} alt="rectangle" />
@@ -45,8 +52,11 @@ const RectangleComponent = () => {
             </p>
           </li>
         </ul>
-        <button className="rectangle-btn">Order Now</button>
+        <button onClick={openModal} className="rectangle-btn">
+          Order Now
+        </button>
       </div>
+      {showModal && <ShowModal closeModal={() => setShowModal(false)} />}
     </div>
   );
 };
