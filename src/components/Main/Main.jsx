@@ -9,6 +9,7 @@ import RectangleComponent from '../Rectangle/Rectangle';
 import Circle from '../Circle/Circle';
 import FoodList from 'components/Foodlist/FoodList';
 import Reviews from '../Reviews/Reviews';
+import Subscribe from '../Subscribe/Subscribe';
 
 const Main = () => {
   const [currentImage, setCurrentImage] = useState(Table_one);
@@ -52,6 +53,7 @@ const Main = () => {
       <RectangleComponent />
       <FoodList />
       <Reviews />
+      <Subscribe />
     </div>
   );
 };

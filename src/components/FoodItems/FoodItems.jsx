@@ -18,7 +18,6 @@ const FoodItems = ({ foods }) => {
               <img className="food-photo" src={food.galery} alt={food.name} />
 
               <p className="description">{food.description}</p>
-              <h2 className="title-food">{food.review}</h2>
               <button className="show_more">Show more</button>
             </li>
           </ul>
