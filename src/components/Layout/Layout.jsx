@@ -29,9 +29,6 @@ const Layout = () => {
           <NavLink className="nav-menu" to="/favorites">
             Favorite
           </NavLink>
-          <button className="bt-menu" to="/">
-            Order Now
-          </button>
         </div>
       </nav>
       <Suspense fallback={<div>loading</div>}>

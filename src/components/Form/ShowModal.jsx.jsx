@@ -1,11 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ShowModal.css';
 import Close from '../img/icon/Close';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ShowModal = ({ closeModal }) => {
+  const [email, setEmail] = useState('');
+  const [text, setText] = useState('');
+  const [phone, setPhone] = useState('');
+
   const handleSubmit = event => {
     event.preventDefault();
+
+    // Перевірте поля форми
+    if (email.trim() === '' || text.trim() === '' || phone.trim() === '') {
+      toast.error('All fields are required', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+      });
+      return; // Не закривати  вікно, якщо є помилка
+    }
+
+    // Закрити модальне вікно та успішно відправити дані
     closeModal();
+    toast.success('Form submitted successfully', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      newestOnTop: false,
+      closeOnClick: true,
+      rtl: false,
+      pauseOnFocusLoss: true,
+      draggable: true,
+      pauseOnHover: true,
+      theme: 'colored',
+    });
+  };
+
+  const handleEmailChange = evt => {
+    setEmail(evt.target.value);
+  };
+
+  const handleTextChange = evt => {
+    setText(evt.target.value);
+  };
+
+  const handlePhoneChange = evt => {
+    setPhone(evt.target.value);
   };
 
   return (
@@ -24,7 +71,7 @@ const ShowModal = ({ closeModal }) => {
             type="text"
             name="name"
             placeholder="Your name"
-            required
+            onChange={handleTextChange}
           />
           <label className="order-label" htmlFor="name">
             Phone number
@@ -33,7 +80,7 @@ const ShowModal = ({ closeModal }) => {
               type="phone"
               name="phone"
               placeholder="+38(0_ _) _ _ _   _ _   _ _"
-              required
+              onChange={handlePhoneChange}
             />
           </label>
           <label className="order-label" htmlFor="name">
@@ -44,7 +91,7 @@ const ShowModal = ({ closeModal }) => {
             type="email"
             name="email"
             placeholder="example@gmail.com"
-            required
+            onChange={handleEmailChange}
           />
           <button className="order-submit" type="submit">
             Send

@@ -32,7 +32,7 @@ const RectangleComponent = () => {
         <ul className="rectangle-block">
           <li className="rectangle-fast">
             <div className="rectangle-circle">
-              <Fast />
+              <Fast className="rectangle-fast" />
             </div>
             <h3 className="rectangle-fast-title">Fasest Delivery</h3>
             <p className="rectangle-fast-sub">
@@ -42,7 +42,7 @@ const RectangleComponent = () => {
           </li>
           <li>
             <div className="rectangle-circle">
-              <Easy />
+              <Easy className="rectangle-easy" />
             </div>
             <h3 className="rectangle-fast-title">Easy To Order</h3>
             <p className="rectangle-fast-sub">

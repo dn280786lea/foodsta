@@ -1,0 +1,18 @@
+import React from 'react';
+
+const Plus = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M11 3V11H3V13H11V21H13V13H21V11H13V3H11Z"
+      fill="currentColor"
+    ></path>
+  </svg>
+);
+
+export default Plus;
