@@ -1,9 +1,11 @@
 {
   "files": {
-    "main.css": "/foodsta/static/css/main.b6d956b0.css",
-    "main.js": "/foodsta/static/js/main.3fc039e7.js",
-    "static/css/357.aaecee03.chunk.css": "/foodsta/static/css/357.aaecee03.chunk.css",
-    "static/js/357.8d434d0a.chunk.js": "/foodsta/static/js/357.8d434d0a.chunk.js",
+    "main.css": "/foodsta/static/css/main.4e009b37.css",
+    "main.js": "/foodsta/static/js/main.d8673c6f.js",
+    "static/css/258.04a7d2c8.chunk.css": "/foodsta/static/css/258.04a7d2c8.chunk.css",
+    "static/js/258.1b1e6300.chunk.js": "/foodsta/static/js/258.1b1e6300.chunk.js",
+    "static/css/417.e3fc9395.chunk.css": "/foodsta/static/css/417.e3fc9395.chunk.css",
+    "static/js/417.b469cd4d.chunk.js": "/foodsta/static/js/417.b469cd4d.chunk.js",
     "static/js/137.890267fb.chunk.js": "/foodsta/static/js/137.890267fb.chunk.js",
     "static/media/Table_3.png": "/foodsta/static/media/Table_3.3feb430792eed9b30924.png",
     "static/media/Table_one.png": "/foodsta/static/media/Table_one.8a5e3e959d851268dee2.png",
@@ -16,14 +18,16 @@
     "static/media/Roboto-Bold.ttf": "/foodsta/static/media/Roboto-Bold.17451a4c1cd55e33ac57.ttf",
     "static/media/banan.png": "/foodsta/static/media/banan.286ca5d2881a07d6cc93.png",
     "index.html": "/foodsta/index.html",
-    "main.b6d956b0.css.map": "/foodsta/static/css/main.b6d956b0.css.map",
-    "main.3fc039e7.js.map": "/foodsta/static/js/main.3fc039e7.js.map",
-    "357.aaecee03.chunk.css.map": "/foodsta/static/css/357.aaecee03.chunk.css.map",
-    "357.8d434d0a.chunk.js.map": "/foodsta/static/js/357.8d434d0a.chunk.js.map",
+    "main.4e009b37.css.map": "/foodsta/static/css/main.4e009b37.css.map",
+    "main.d8673c6f.js.map": "/foodsta/static/js/main.d8673c6f.js.map",
+    "258.04a7d2c8.chunk.css.map": "/foodsta/static/css/258.04a7d2c8.chunk.css.map",
+    "258.1b1e6300.chunk.js.map": "/foodsta/static/js/258.1b1e6300.chunk.js.map",
+    "417.e3fc9395.chunk.css.map": "/foodsta/static/css/417.e3fc9395.chunk.css.map",
+    "417.b469cd4d.chunk.js.map": "/foodsta/static/js/417.b469cd4d.chunk.js.map",
     "137.890267fb.chunk.js.map": "/foodsta/static/js/137.890267fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6d956b0.css",
-    "static/js/main.3fc039e7.js"
+    "static/css/main.4e009b37.css",
+    "static/js/main.d8673c6f.js"
   ]
 }
