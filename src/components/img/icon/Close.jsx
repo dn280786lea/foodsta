@@ -1,3 +1,4 @@
+import React from 'react';
 const Close = ({ width, height, fillColor, strokeColor }) => {
   return (
     <svg

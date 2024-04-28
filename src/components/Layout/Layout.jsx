@@ -2,6 +2,7 @@ import { Outlet, NavLink } from 'react-router-dom';
 import { Suspense } from 'react';
 import {} from './Layout.css';
 import Logo from 'components/img/icon/Logo';
+import Backet from 'components/img/icon/Basket';
 
 const Layout = () => {
   return (
@@ -29,6 +30,9 @@ const Layout = () => {
           <NavLink className="nav-menu" to="/favorites">
             Favorite
           </NavLink>
+          <button className="nav-menu">
+            <Backet className="nav-backet" />
+          </button>
         </div>
       </nav>
       <Suspense fallback={<div>loading</div>}>

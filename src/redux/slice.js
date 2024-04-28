@@ -1,17 +1,34 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getAllFoods } from './operations';
 
+const loadFavoritesFromLocalStorage =
+  JSON.parse(localStorage.getItem('favorites')) || [];
+
 const initialState = {
   foods: [],
   totalFoods: 0,
   isLoading: false,
   error: null,
+  favorites: loadFavoritesFromLocalStorage,
 };
 
 export const foodsSlice = createSlice({
   name: 'foods',
   initialState,
-  reducers: {},
+  reducers: {
+    addToFavorites(state, { payload }) {
+      state.favorites.push(payload);
+      localStorage.setItem('favorites', JSON.stringify(state.favorites));
+    },
+    removeFromFavorites(state, { payload }) {
+      state.favorites = state.favorites.filter(food => food.id !== payload);
+      localStorage.setItem('favorites', JSON.stringify(state.favorites));
+    },
+    clearFavorites(state) {
+      state.favorites = [];
+      localStorage.removeItem('favorites');
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(getAllFoods.pending, state => {
@@ -19,7 +36,6 @@ export const foodsSlice = createSlice({
       })
       .addCase(getAllFoods.fulfilled, (state, action) => {
         state.isLoading = false;
-        console.log(action.payload);
         state.foods = action.payload;
         state.totalFoods = action.payload.length;
         state.error = null;
@@ -32,3 +48,5 @@ export const foodsSlice = createSlice({
 });
 
 export const foodsReducer = foodsSlice.reducer;
+export const { addToFavorites, removeFromFavorites, clearFavorites } =
+  foodsSlice.actions;

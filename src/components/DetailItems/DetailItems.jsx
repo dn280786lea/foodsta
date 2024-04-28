@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './DetailItems.css';
 import Close from '../img/icon/Close';
 import { useSelector } from 'react-redux';
@@ -6,9 +7,13 @@ import { selectFoodById } from '../../redux/selectors';
 import Heart from '../img/icon/Heart';
 import Delete from 'components/img/icon/Delete';
 import Plus from 'components/img/icon/Plus';
+import { addToFavorites, removeFromFavorites } from '../../redux/slice';
+import { selectFavorites } from '../../redux/selectors';
 
 const DetailItems = ({ closeModal, foodId }) => {
   const food = useSelector(state => selectFoodById(state, foodId));
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -52,7 +57,23 @@ const DetailItems = ({ closeModal, foodId }) => {
                   <p className="food-rating">
                     Rating: {food.rating.toFixed(1)}
                   </p>
-                  <button className="heart">
+                  <button
+                    className={`heart ${
+                      favorites.some(item => item.id === food.id)
+                        ? 'active'
+                        : ''
+                    }`}
+                    onClick={() => {
+                      console.log('food.id:', food.id);
+                      console.log('favorites:', favorites);
+                      if (favorites.some(item => item.id === food.id)) {
+                        dispatch(removeFromFavorites(food.id));
+                      } else {
+                        dispatch(addToFavorites(food));
+                      }
+                    }}
+                  >
+                    {' '}
                     <Heart />
                   </button>
                 </div>

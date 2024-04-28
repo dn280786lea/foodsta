@@ -4,7 +4,8 @@ import Layout from './Layout/Layout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const HomePage = lazy(() => import('../HomePage/HomePage'));
+const HomePage = lazy(() => import('../Page/HomePage/HomePage'));
+const Favorite = lazy(() => import('../Page/Favorite/Favorite'));
 
 const App = () => {
   return (
@@ -13,6 +14,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path="/favorites" element={<Favorite />} />
+          <Route path="/" element={<HomePage />} />
         </Route>
       </Routes>
     </>

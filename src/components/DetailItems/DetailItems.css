@@ -85,7 +85,15 @@ ol li::before {
 }
 
 .heart {
-  fill: #fefefe;
+  padding-left: 10px;
+  fill: #fff;
+  stroke: black;
+  cursor: pointer;
+  background-color: transparent;
+}
+.heart.active {
+  fill: #e44848;
+  stroke: #e44848;
 }
 .food-change {
   color: var(--dark-green);

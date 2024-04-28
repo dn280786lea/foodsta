@@ -7,4 +7,4 @@ export const selectFoodById = (state, foodId) => {
   return state.foods.foods.find(food => food.id === foodId);
 };
 
-export const selectFavorites = state => state.cars && state.cars.favorites;
+export const selectFavorites = state => state.foods && state.foods.favorites;
