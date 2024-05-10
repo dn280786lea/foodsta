@@ -6,9 +6,16 @@ const FoodItems = ({ foods }) => {
   const [detailModalVisible, setDetailModalVisible] = useState(false);
   const [selectedFoodId, setSelectedFoodId] = useState(null);
 
+  // Function to open the modal
   const openModal = foodId => {
-    setDetailModalVisible(true);
-    setSelectedFoodId(foodId);
+    setSelectedFoodId(foodId); // Set the selected food ID
+    setDetailModalVisible(true); // Show the modal
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setDetailModalVisible(false);
+    setSelectedFoodId(null);
   };
 
   return (
@@ -34,10 +41,7 @@ const FoodItems = ({ foods }) => {
         </div>
       ))}
       {detailModalVisible && (
-        <DetailItems
-          closeModal={() => setDetailModalVisible(false)}
-          foodId={selectedFoodId}
-        />
+        <DetailItems closeModal={closeModal} foodId={selectedFoodId} />
       )}
     </div>
   );

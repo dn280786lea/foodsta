@@ -1,10 +1,22 @@
+import React, { useState } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import { Suspense } from 'react';
-import {} from './Layout.css';
+import './Layout.css';
 import Logo from 'components/img/icon/Logo';
-import Backet from 'components/img/icon/Basket';
+import Basket from 'components/img/icon/Basket';
+import AddBasket from '../AddBacket/AddBacket';
 
 const Layout = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const openBasketModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const closeBasketModal = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <>
       <nav>
@@ -30,14 +42,15 @@ const Layout = () => {
           <NavLink className="nav-menu" to="/favorites">
             Favorite
           </NavLink>
-          <button className="nav-menu">
-            <Backet className="nav-backet" />
+          <button className="nav-menu" onClick={openBasketModal}>
+            <Basket className="nav-basket" />
           </button>
         </div>
       </nav>
-      <Suspense fallback={<div>loading</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
+      {isModalVisible && <AddBasket closeModal={closeBasketModal} />}
     </>
   );
 };

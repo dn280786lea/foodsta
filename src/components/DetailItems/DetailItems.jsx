@@ -9,17 +9,18 @@ import Delete from 'components/img/icon/Delete';
 import Plus from 'components/img/icon/Plus';
 import { addToFavorites, removeFromFavorites } from '../../redux/slice';
 import { selectFavorites } from '../../redux/selectors';
+import { addToBasket } from '../../redux/addbacket/slice';
 
 const DetailItems = ({ closeModal, foodId }) => {
   const food = useSelector(state => selectFoodById(state, foodId));
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
+  const [count, setCount] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(food.price * count);
 
   const handleSubmit = event => {
     event.preventDefault();
   };
-  const [count, setCount] = useState(1);
-  const [totalPrice, setTotalPrice] = useState(food.price * count);
 
   const increment = () => {
     const newCount = count + 1;
@@ -33,6 +34,18 @@ const DetailItems = ({ closeModal, foodId }) => {
       setCount(newCount);
       setTotalPrice(newCount * food.price);
     }
+  };
+
+  const handleAddToBasket = () => {
+    dispatch(
+      addToBasket({
+        id: food.id,
+        name: food.name,
+        count: 1,
+        totalPrice: food.price,
+      })
+    );
+    closeModal();
   };
 
   return (
@@ -64,8 +77,6 @@ const DetailItems = ({ closeModal, foodId }) => {
                         : ''
                     }`}
                     onClick={() => {
-                      console.log('food.id:', food.id);
-                      console.log('favorites:', favorites);
                       if (favorites.some(item => item.id === food.id)) {
                         dispatch(removeFromFavorites(food.id));
                       } else {
@@ -73,7 +84,6 @@ const DetailItems = ({ closeModal, foodId }) => {
                       }
                     }}
                   >
-                    {' '}
                     <Heart />
                   </button>
                 </div>
@@ -87,7 +97,7 @@ const DetailItems = ({ closeModal, foodId }) => {
                   </div>
                   <div className="food-description">
                     <p className="food-ingr">
-                      <span className="food-change">Description</span>:{' '}
+                      <span class="food-change">Description</span>:{' '}
                       {food.description}
                     </p>
                     <ol className="food-description">
@@ -110,14 +120,15 @@ const DetailItems = ({ closeModal, foodId }) => {
                   <Delete />
                 </button>
                 <div className="add-count">{count}</div>
-
                 <button className="add-plus" onClick={increment}>
                   <Plus />
                 </button>
               </div>
-              <button className="basket-btn">
-                Add to basket {totalPrice.toFixed(2)} {food.currency}
-              </button>
+              <div className="basket-btn-cont">
+                <button className="basket-btn" onClick={handleAddToBasket}>
+                  Add to basket {totalPrice.toFixed(2)} {food.currency}
+                </button>
+              </div>
             </div>
           </div>
         </form>

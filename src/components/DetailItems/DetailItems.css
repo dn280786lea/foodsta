@@ -132,16 +132,22 @@ ol li::before {
   z-index: 1;
   margin-top: auto;
   padding: 16px;
+  margin-left: 60px;
 }
 .add-basket-wrapper {
   display: flex;
   align-items: center;
   white-space: nowrap;
 }
+
+.basket-btn-cont {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
 .basket-btn {
-  margin-top: 30px;
   padding: 14px 14px;
-  width: 100%;
+  width: 370px;
   background: var(--yellow-main);
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -150,9 +156,8 @@ ol li::before {
   text-align: center;
   color: #2c2c2c;
   box-shadow: none;
-  margin: 0 auto;
-  margin-left: 70px;
 }
+
 .basket-btn:hover {
   border: 2px solid var(--button-green);
   background: var(--button-green);
